@@ -8,6 +8,7 @@ buildCanvas(16);
 const btn = document.querySelector('#button');
 btn.addEventListener('click', function() {
     let x = prompt('Enter # of rows: ');
+    deleteCanvas();
     buildCanvas(x);
 });
 
@@ -22,4 +23,12 @@ function buildCanvas(x) {
     }
 }
 
-//so now I need to make a function that deletes all cells
+function deleteCanvas() {
+    const cells = container.querySelectorAll('.divCell')
+    for (let i = 0; i < cells.length; i++) {
+        let cell = cells[i];
+        container.removeChild(cell);
+    }
+}
+
+//now must make function to change color when hovered over
