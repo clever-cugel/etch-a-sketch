@@ -17,9 +17,12 @@ function buildCanvas(x) {
         const divCell = document.createElement('div');
         container.appendChild(divCell);
         divCell.className = 'divCell';
-        divCell.style.backgroundColor = 'white';
+        divCell.style.backgroundColor = 'black';
         divCell.style.height = (1000/x) + 'px';
         divCell.style.width = (1000/x) + 'px';
+        divCell.addEventListener('mouseenter', function() {
+            divCell.style.backgroundColor = 'white';
+        });
     }
 }
 
