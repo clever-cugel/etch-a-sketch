@@ -7,9 +7,18 @@ buildCanvas(16);
 
 const btn = document.querySelector('#button');
 btn.addEventListener('click', function() {
-    let x = prompt('Enter # of rows: ');
-    deleteCanvas();
-    buildCanvas(x);
+    let flag = true;
+    while (flag) {
+        let x = prompt('Enter # of rows: ');
+        if (x > 100 || x < 1) {
+            alert('Out of bounds, please try again');
+            continue;
+        } else {
+            deleteCanvas();
+            buildCanvas(x);
+            flag = false;
+        }
+    }
 });
 
 function buildCanvas(x) {
